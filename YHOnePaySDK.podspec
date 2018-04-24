@@ -16,10 +16,16 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/XmYlzYhkj/YHOnePaySDK.git", :tag => "1.0.0" }
 
-  #s.source_files  = "Classes", "Classes/*", "Resources", "Resources/*"
+  #s.source_files  = "Classes", "Classes/*"
+
+  s.resources    = 'Resources/YHOnePaySDK.bundle'
 
   s.requires_arc = true
 
   s.vendored_frameworks = ["Classes/YHOnePaySDK.framework"]
+
+  s.dependency = 'MJRefresh', '3.1.12'
+  s.dependency = 'WebViewJavascriptBridge', '6.0.2'
+  s.dependency = 'SVProgressHUD', '2.1.2'
   
 end
