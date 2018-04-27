@@ -1,6 +1,6 @@
 //
 //  YlzCashierDeskDelegate
-//  YlzPaymentSDK
+//  YHOnePaySDK
 //  支付收银台界面
 //  Created by jagtu@sina.com on 16/8/23.
 //  Copyright © 2016年 ylzinfo. All rights reserved.
@@ -10,7 +10,7 @@
 
 #import <YHBaseSDK/YHBaseSDK.h>
 
-#import "YHOnePayRouter.h"
+#import "YHOnePayAPI.h"
 
 /**
  * 显示收银台
@@ -20,15 +20,15 @@
  */
 
 
-@interface YlzCashierDeskViewController : YHBaseVC
+@interface YHCashierDeskVC : YHBaseVC
 
 
 /**
  *  初始化支付收银台界面
  *  @param chargeNo       订单单号
  */
--(instancetype)initWithChargeNo:(NSString *)_chargeNo;
+-(instancetype)initWithChargeNo:(NSString *)chargeNo;
 
--(void)resfreshViewWithCode:(YLZErrCode)errorCode message:(NSString *)message result:(NSDictionary *)resultDic;
+-(void)showResultWithCode:(YLZErrCode)errorCode message:(NSString *)message result:(NSDictionary *)resultDic;
 
 @end

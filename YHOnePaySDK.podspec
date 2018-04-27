@@ -22,10 +22,21 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.vendored_frameworks = ["Classes/YHOnePaySDK.framework"]
+  s.vendored_frameworks = ["Frameworks/YHOnePaySDK.framework"]
 
-  s.dependency = 'MJRefresh', '3.1.12'
-  s.dependency = 'WebViewJavascriptBridge', '6.0.2'
-  s.dependency = 'SVProgressHUD', '2.1.2'
+
+  s.dependency     'YHBaseSDK', '1.1.2'
+
+  s.dependency     'YHCategorySDK', '1.0.0'
+
+  s.dependency     'YHUtiliitiesSDK', '1.0.0'
+
+  s.dependency     'YHAlertSDK', '1.0.0'
+
+  s.dependency     'YHWechatSDK', '1.8.2'
+
+  s.dependency     'YHAlipaySDK', '15.5.2'
+
+  s.dependency     'SVProgressHUD', '2.1.2'
   
 end

@@ -1,6 +1,6 @@
 //
 //  PayApi.h
-//  YlzPaymentSDK
+//  YHOnePaySDK
 //
 //  Created by dev on 16/8/23.
 //  Copyright © 2016年 jagtu. All rights reserved.
@@ -37,9 +37,9 @@ typedef void(^PayCompletionBlock)(YLZErrCode errorCode,NSString * message,NSDict
 
 
 
-@class YlzCashierDeskViewController;
+@class YHCashierDeskVC;
 
-@interface YHOnePayRouter : NSObject
+@interface YHOnePayAPI : NSObject
 @property(nonatomic,copy)PayCompletionBlock completionBlock;//回调Block
 
 /**
@@ -47,7 +47,7 @@ typedef void(^PayCompletionBlock)(YLZErrCode errorCode,NSString * message,NSDict
  *
  *  @return 返回单例对象
  */
-+ (YHOnePayRouter *)defaultService;
++ (YHOnePayAPI *)defaultService;
 
 /**
  *  统一支付，将调起SDK内置收银台页面，让用户选择支付渠道
