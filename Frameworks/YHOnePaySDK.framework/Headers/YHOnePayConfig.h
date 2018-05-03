@@ -15,7 +15,7 @@
 
 @property(nonatomic,assign)BOOL isEvaluateTrust;//是否调用SecTrustEvaluate来验证SSL证书
 @property(nonatomic,assign)BOOL showLog;
-@property(nonatomic,assign)BOOL callBackAfterClose;//YES则在用户关闭收银台时才回调订单支付结果
+
 @property(nonatomic,assign)BOOL useMyResult;//YES则在支付成功有弹框提醒，NO则没有，默认YES
 @property(nonatomic,assign)BOOL ensureCorrectSuccess;//YES则确保如果返回支付成功可信(即SDK将再次向服务端确认支付结果)【前提是调起统一收银台页面】 默认值为YES
 @property(nonatomic,assign)NSTimeInterval netWorkRequestTimeoutInterval;//网络超时时间设置，默认20秒
@@ -26,7 +26,7 @@
 
 @property(nonatomic,strong)UIColor  * navigationBarTitleColor;
 @property(nonatomic,strong)UIColor  * navigationBarBgColor;
-@property(nonatomic,strong)UIImage * navigationBackBarImage;
+@property(nonatomic,strong)UIImage  * navigationBackBarImage;
 
 @property(nonatomic,strong)UIColor * buttonTitleColor;
 @property(nonatomic,strong)UIColor * buttonBgColor;
@@ -37,6 +37,8 @@
 @property(nonatomic,strong)UIColor * blackTextColor;
 //标题2 颜色
 @property(nonatomic,strong)UIColor * darkGreyTextColor;
+//标题 颜色
+@property(nonatomic,strong)UIColor * greyTitleColor;
 //正文 颜色
 @property(nonatomic,strong)UIColor * greyTextColor;
 //提示 颜色
