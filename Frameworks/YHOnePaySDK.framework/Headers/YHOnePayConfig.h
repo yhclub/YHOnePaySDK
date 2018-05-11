@@ -14,10 +14,9 @@
 @property(nonatomic,strong)NSString * appScheme;
 
 @property(nonatomic,assign)BOOL isEvaluateTrust;//是否调用SecTrustEvaluate来验证SSL证书
-@property(nonatomic,assign)BOOL showLog;
+@property(nonatomic,assign)BOOL showLog;        //默认YES
+@property(nonatomic,assign)BOOL useCustomResult;//YES则直接回调，由商户自行处理支付结果，NO则SDK将弹窗提示，默认NO
 
-@property(nonatomic,assign)BOOL useMyResult;//YES则在支付成功有弹框提醒，NO则没有，默认YES
-@property(nonatomic,assign)BOOL ensureCorrectSuccess;//YES则确保如果返回支付成功可信(即SDK将再次向服务端确认支付结果)【前提是调起统一收银台页面】 默认值为YES
 @property(nonatomic,assign)NSTimeInterval netWorkRequestTimeoutInterval;//网络超时时间设置，默认20秒
 
 //内容底色
