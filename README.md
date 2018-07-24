@@ -2,7 +2,10 @@
 统一支付
 
 版本记录
-### SDK1.2.0
+### SDK1.0.3
+1. baseSDK等不指定版本
+
+### SDK1.0.1
 1. 修改[YHOnePayConfig shareInstance]，增加useCustomResult;//YES则直接回调，由商户自行处理支付结果，NO则SDK将弹窗提示，默认NO
 
 ### SDK1.0.1
