@@ -11,7 +11,7 @@
 @interface YHOnePayConfig : NSObject
 
 @property(nonatomic,strong)NSString * onePayUrl;//统一支付服务端地址
-@property(nonatomic,strong)NSString * appScheme;
+@property(nonatomic,strong)NSString * appScheme;//设置回调URL Schemes 默认值为[[NSBundle mainBundle] bundleIdentifier]。需要在商户APP设置有相应的URL Schemes 否则支付宝支付完成无法回调回APP
 
 @property(nonatomic,assign)BOOL isEvaluateTrust;//是否调用SecTrustEvaluate来验证SSL证书
 @property(nonatomic,assign)BOOL showLog;        //默认YES

@@ -23,6 +23,8 @@
 #define kChannelWxWapPay @"WX_WAP" //打开 data.result.directUrl
 #define kChannelUpWap @"UP_WAP" // 提交表单 data.result.html
 #define kChannelUpApp @"UP_APP" //
+#define kChannelICBCApp @"ICBC_APP" //
+
 #define kChannelType @"app"
 
 //0 成功 1正在 2 失败

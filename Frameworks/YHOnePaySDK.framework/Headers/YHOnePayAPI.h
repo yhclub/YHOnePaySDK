@@ -106,6 +106,8 @@ typedef void(^PayCompletionBlock)(YLZErrCode errorCode,NSString * message,NSDict
  *  @param completionBlock  支付结果回调Block
  *  【由于在跳转第三方支付的过程中，商户app在后台很可能被系统kill了，所以之前调起支付接口设置的callback就会失效，请商户对standbyCallback返回的回调结果进行处理,就是在这个方法里面处理跟callback一样的逻辑】
  *  注：如果商户app并未被系统kill掉，且之前调起支付接口时设置的callback有效，则不会调用completionBlock
+ *
+ *  如跳转至工行app支付，需要在AppDelegate.m中的application:openURL:options:调用此方法
  */
 - (void)processOrderWithPaymentResult:(NSURL *)resultUrl standbyCallback:(PayCompletionBlock)completionBlock;
 

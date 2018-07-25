@@ -17,4 +17,9 @@
  */
 +(void)gotoNextVC:(UIViewController *)vc;
 
+/**
+ *  当前显示的vc
+ */
++(UIViewController *)getCurrentVc;
+
 @end

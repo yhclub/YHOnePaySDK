@@ -4,7 +4,8 @@
 //
 //  Created by Jagtu on 2018/4/27.
 //  Copyright © 2018年 yh. All rights reserved.
-//  Version 1.0.3
+//  Version 1.0.4
+//  接入工行e支付
 
 #import <UIKit/UIKit.h>
 
@@ -34,3 +35,6 @@ FOUNDATION_EXPORT const unsigned char YHOnePaySDKVersionString[];
 
 //other
 #import <YHOnePaySDK/UIImage+YHOnePay.h>
+
+//ICBCpay
+#import <ICBCPaySDK/ICBCPaySDK.h>
