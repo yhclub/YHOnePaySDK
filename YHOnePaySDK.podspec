@@ -18,11 +18,11 @@ Pod::Spec.new do |s|
 
   #s.source_files  = "Classes", "Classes/*"
 
-  s.resources    = 'Resources/YHOnePaySDK.bundle'
+  s.resources    = 'Resources/*.bundle'
 
   s.requires_arc = true
 
-  s.vendored_frameworks = ["Frameworks/YHOnePaySDK.framework"]
+  s.vendored_frameworks = ["Frameworks/*.framework"]
 
 
   s.dependency     'YHBaseSDK'##, '1.1.2'
