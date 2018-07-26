@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YHOnePaySDK"
-  s.version      = "1.0.4"
+  s.version      = "1.0.3"
   s.summary      = "统一支付SDK"
 
   s.description  = "统一支付SDK，封装了支付宝支付、微信支付、银联支付、支付宝Wap支付、微信Wap支付等多种支付方式。对接指南：http://120.42.37.94:9999/showdoc-master/web/#/page/1161 "
@@ -14,15 +14,15 @@ Pod::Spec.new do |s|
   s.author       = { "XmYhkj" => "yhkj_xm@163.com" }
   s.platform     = :ios, "8.0"
 
-  s.source       = { :git => "https://github.com/XmYlzYhkj/YHOnePaySDK.git", :tag => "1.0.4" }
+  s.source       = { :git => "https://github.com/XmYlzYhkj/YHOnePaySDK.git", :tag => "1.0.3" }
 
   #s.source_files  = "Classes", "Classes/*"
 
-  s.resources    = 'Resources/*.bundle'
+  s.resources    = 'Resources/YHOnePaySDK.bundle'
 
   s.requires_arc = true
 
-  s.vendored_frameworks = ["Frameworks/*.framework"]
+  s.vendored_frameworks = ["Frameworks/YHOnePaySDK.framework"]
 
 
   s.dependency     'YHBaseSDK'##, '1.1.2'
@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
 
   s.dependency     'YHWechatSDK'##, '1.8.2'
 
-  s.dependency     'YHAlipaySDK'##, '15.5.2'
+  s.dependency     'YHAlipaySDK', '15.5.2'
 
   s.dependency     'SVProgressHUD', '2.1.2'
   
