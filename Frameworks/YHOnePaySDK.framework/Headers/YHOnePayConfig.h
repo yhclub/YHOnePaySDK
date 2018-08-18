@@ -8,55 +8,40 @@
 
 #import <UIKit/UIKit.h>
 
+//! Project version number for YHOnePaySDK.
+FOUNDATION_EXPORT double YHOnePaySDKVersionNumber;
+
+//! Project version string for YHOnePaySDK.
+FOUNDATION_EXPORT const unsigned char YHOnePaySDKVersionString[];
+
+/*! @brief 错误码
+ *
+ */
+typedef NS_ENUM(NSInteger,YLZErrCode) {
+    YLZErrCodeSuccess           = 0,    /**< 成功    订单支付成功*/
+    YLZErrCodeCommon     = -1,   /**< 普通错误类型    其它支付错误*/
+    YLZErrCodeUserCancel = -2,   /**< 用户点击取消并返回    用户中途取消*/
+    YLZErrCodeSentFail   = -3,   /**< 发送失败    网络连接出错*/
+    YLZErrCodeAuthDeny   = -4,   /**< 授权失败    */
+    YLZErrCodeUnsupport  = -5,   /**< 不支持    */
+    YLZErrCodeParamExpection     = -6,   /**< 参数异常错误    */
+    YLZErrCodeInProcess     = -7,   /**< 正在处理中，支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态    */
+    YLZErrCodePayFail   = -8,   /**< 订单支付失败    */
+    YLZErrCodeRepeat   = -9,   /**< 重复请求    */
+    YLZErrCodeUnKnown   = -10,   /**< 支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态    */
+    YLZErrCodeExpection   = -11,/**< 代码异常，响应数据异常等   */
+};
+
+/**
+ *  @param errorCode 错误码
+ *  @param message   提示信息
+ *  @param resultDic 其他返回结果
+ */
+typedef void(^YHOPayCompletionBlock)(YLZErrCode errorCode,NSString * message,NSDictionary * resultDic);
+
+
+
 @interface YHOnePayConfig : NSObject
-
-@property(nonatomic,strong)NSString * onePayUrl;//统一支付服务端地址
-@property(nonatomic,strong)NSString * appScheme;//设置回调URL Schemes 默认值为[[NSBundle mainBundle] bundleIdentifier]。需要在商户APP设置有相应的URL Schemes 否则支付宝支付完成无法回调回APP
-
-@property(nonatomic,assign)BOOL isEvaluateTrust;//是否调用SecTrustEvaluate来验证SSL证书
-@property(nonatomic,assign)BOOL showLog;        //默认YES
-@property(nonatomic,assign)BOOL useCustomResult;//YES则直接回调，由商户自行处理支付结果，NO则SDK将弹窗提示，默认NO
-
-@property(nonatomic,assign)NSTimeInterval netWorkRequestTimeoutInterval;//网络超时时间设置，默认20秒
-
-//内容底色
-@property(nonatomic,strong)UIColor * viewBgColor;
-@property(nonatomic,strong)UIColor * contentBgColor;
-
-@property(nonatomic,strong)UIColor  * navigationBarTitleColor;
-@property(nonatomic,strong)UIColor  * navigationBarBgColor;
-@property(nonatomic,strong)UIImage  * navigationBackBarImage;
-
-@property(nonatomic,strong)UIColor * buttonTitleColor;
-@property(nonatomic,strong)UIColor * buttonBgColor;
-@property(nonatomic,strong)UIColor * buttonLightTitleColor;
-@property(nonatomic,strong)UIColor * buttonLightBgColor;
-
-//标题1 颜色
-@property(nonatomic,strong)UIColor * blackTextColor;
-//标题2 颜色
-@property(nonatomic,strong)UIColor * darkGreyTextColor;
-//标题 颜色
-@property(nonatomic,strong)UIColor * greyTitleColor;
-//正文 颜色
-@property(nonatomic,strong)UIColor * greyTextColor;
-//提示 颜色
-@property(nonatomic,strong)UIColor * lightGreyTextColor;
-
-//突出标题颜色，用户重要级文字信息
-@property(nonatomic,strong)UIColor * stressTextColor;
-@property(nonatomic,strong)UIColor * blueTextColor;
-
-//突出颜色，用于特别需要强调和突出的文字
-@property(nonatomic,strong)UIColor * stressColor;
-
-@property(nonatomic,strong)UIColor * lineColor;//线条灰色
-@property(nonatomic,strong)UIColor * borderColor;//各种边框正常颜色
-
-@property(nonatomic,strong)UIColor * loadTextColor;//加载框文字颜色
-@property(nonatomic,strong)UIColor * loadBgColor;//加载框背景色
-@property(nonatomic,strong)UIColor * loadCoverBgColor;//加载框遮挡背景色
-
 
 /**
  *  创建单例
@@ -64,5 +49,30 @@
  *  @return 返回单例对象
  */
 + (instancetype)shareInstance;
+
+/**
+ * 统一支付服务端地址，请务必设置
+ */
+@property(nonatomic,copy)NSString * onePayUrl;
+
+/** APP支付回调URL Schemes，请务必设置
+ *  默认值为[[NSBundle mainBundle] bundleIdentifier]
+ *  注：微信支付是将其分配给商户对应appId作为回调URL Schemes，商户APP也应该添加
+ */
+@property(nonatomic,copy)NSString * appScheme;
+
+/** --- 其他(可选配置) --- **/
+//微信支付渠道的类型 app 或者 wap
+@property(nonatomic,copy)NSString * wxChannelType;
+//是否调用SecTrustEvaluate来验证SSL证书
+@property(nonatomic,assign)BOOL isEvaluateTrust;
+//默认YES
+@property(nonatomic,assign)BOOL showLog;
+//YES则直接回调，由商户自行处理支付结果，NO则SDK将弹窗提示，默认NO
+@property(nonatomic,assign)BOOL useCustomResult;
+//网络超时时间设置，默认20秒
+@property(nonatomic,assign)NSTimeInterval netWorkRequestTimeoutInterval;
+
+@property(nonatomic,copy)NSString * ipAddress;
 
 @end
