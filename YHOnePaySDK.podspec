@@ -43,5 +43,7 @@ Pod::Spec.new do |s|
   s.dependency     'SVProgressHUD', '~> 2.1.2'
 
   s.dependency     'SAMKeychain', '~> 1.5.2'
+
+  s.dependency 'YHUPPayPluginSDK', '~> 0.1.4'
   
 end
