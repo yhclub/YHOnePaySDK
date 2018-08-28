@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <YHBaseSDK/YHNavView.h>
 
 @interface YHOnePayTheme : NSObject
 
@@ -43,6 +44,11 @@
 @property(nonatomic,copy)UIColor *th_colorBg;    //#f5f5f5
 @property(nonatomic,copy)UIColor *th_colorBgWhite;//#ffffff
 
+
+/**
+ nav样式
+ */
+@property(nonatomic,assign)YHNavStyle th_navStyle;
 
 
 /**

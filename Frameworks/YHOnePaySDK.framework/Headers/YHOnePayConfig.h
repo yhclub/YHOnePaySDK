@@ -66,8 +66,8 @@ typedef void(^YHOPayCompletionBlock)(YLZErrCode errorCode,NSString * message,NSD
 @property(nonatomic,copy)NSString * wxChannelType;
 //是否调用SecTrustEvaluate来验证SSL证书
 @property(nonatomic,assign)BOOL isEvaluateTrust;
-//默认YES
-@property(nonatomic,assign)BOOL showLog;
+//默认NO,设置是否为测试模式
+@property(nonatomic,assign)BOOL isDebug;
 //YES则直接回调，由商户自行处理支付结果，NO则SDK将弹窗提示，默认NO
 @property(nonatomic,assign)BOOL useCustomResult;
 //网络超时时间设置，默认20秒
