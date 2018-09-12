@@ -26,6 +26,8 @@
 
 #define kDefaultChannelType @"app"
 
+#define kChannelTypeWap @"wap"
+
 //0 成功 1正在 2 失败
 #define KChargeStatInit @"1"
 #define KChargeStatSuccess @"0"

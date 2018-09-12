@@ -36,7 +36,8 @@
  *                         支付成功后，用户服务器也会收到易联众服务器发送的异步通知。 最终支付成功请根据服务端异步通知为准。(特别是微信支付，这里返回成功不代表支付成功，需服务端再次查询确定)
  
  */
--(void)paymentWithChargeNo:(NSString *)chargeNo callback:(YHOPayCompletionBlock)completionBlock;
+-(void)paymentWithChargeNo:(NSString *)chargeNo
+                  callback:(YHOPayCompletionBlock)completionBlock;
 
 /**
  *  统一支付
@@ -46,7 +47,8 @@
  *                         支付成功后，用户服务器也会收到易联众服务器发送的异步通知。 最终支付成功请根据服务端异步通知为准。(特别是微信支付，这里返回成功不代表支付成功，需服务端再次查询确定)
  
  */
-- (void)paymentWithParam:(id)orderParam callback:(YHOPayCompletionBlock)completionBlock;
+- (void)paymentWithParam:(id)orderParam
+                callback:(YHOPayCompletionBlock)completionBlock;
 
 
 
@@ -57,7 +59,9 @@
  *  @param channelId       渠道编码（【统一支付服务端】返回的channelId）
  *  @param completionBlock 查询结果回调Block
  */
--(void)queryPayInfo:(NSString *)chargeNo channelId:(NSString *)channelId callback:(YHOPayCompletionBlock)completionBlock;
+-(void)queryPayInfo:(NSString *)chargeNo
+          channelId:(NSString *)channelId
+           callback:(YHOPayCompletionBlock)completionBlock;
 
 /**
  *  查询订单详情
@@ -65,7 +69,8 @@
  *  @param chargeNo       订单号
  *  @param completionBlock 回调Block
  */
-- (void)queryOrderInfo:(NSString *)chargeNo callback:(YHOPayCompletionBlock)completionBlock;
+- (void)queryOrderInfo:(NSString *)chargeNo
+              callback:(YHOPayCompletionBlock)completionBlock;
 
 
 /**
@@ -75,7 +80,8 @@
  *  @param completionBlock 支付结果回调Block
  
  */
-- (void)queryPayResult:(NSString *)chargeNo callback:(YHOPayCompletionBlock)completionBlock;
+- (void)queryPayResult:(NSString *)chargeNo
+              callback:(YHOPayCompletionBlock)completionBlock;
 
 
 /**
@@ -86,6 +92,7 @@
  *  【由于在跳转第三方支付的过程中，商户app在后台很可能被系统kill了，所以之前调起支付接口设置的callback就会失效，请商户对standbyCallback返回的回调结果进行处理,就是在这个方法里面处理跟callback一样的逻辑】
  *  注：如果商户app并未被系统kill掉，且之前调起支付接口时设置的callback有效，则不会调用completionBlock
  */
-- (void)processOrderWithPaymentResult:(NSURL *)resultUrl standbyCallback:(YHOPayCompletionBlock)completionBlock;
+- (void)processOrderWithPaymentResult:(NSURL *)resultUrl
+                      standbyCallback:(YHOPayCompletionBlock)completionBlock;
 
 @end
