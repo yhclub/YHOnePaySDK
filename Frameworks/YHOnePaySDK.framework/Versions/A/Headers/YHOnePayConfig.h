@@ -64,12 +64,19 @@ typedef void(^YHOPayCompletionBlock)(YLZErrCode errorCode,NSString * message,NSD
 /** --- 其他(可选配置) --- **/
 //微信支付渠道的类型 app 或者 wap
 @property(nonatomic,copy)NSString * wxChannelType;
+
 //是否调用SecTrustEvaluate来验证SSL证书
 @property(nonatomic,assign)BOOL isEvaluateTrust;
+
 //默认NO,设置是否为测试模式
 @property(nonatomic,assign)BOOL isDebug;
+
 //YES则直接回调，由商户自行处理支付结果，NO则SDK将弹窗提示，默认NO
 @property(nonatomic,assign)BOOL useCustomResult;
+
+//支付结果未知时，请求服务端确认支付结果，默认为NO，YES则由商户自行请求服务端查询支付结果
+@property(nonatomic,assign)BOOL useCustomQueryPayResult;
+
 //网络超时时间设置，默认20秒
 @property(nonatomic,assign)NSTimeInterval netWorkRequestTimeoutInterval;
 

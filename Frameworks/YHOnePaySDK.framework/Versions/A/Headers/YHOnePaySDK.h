@@ -16,9 +16,13 @@
 //config
 #import <YHOnePaySDK/YHOnePayConfig.h>
 #import <YHOnePaySDK/YHOnePayTheme.h>
+#import <YHOnePaySDK/YHOnePayCashierDeskProtocol.h>
 
 
 @interface YHOnePaySDK : NSObject
+
+//当前状态，YES为支付中，需要去查询支付结果；
+@property(nonatomic,assign)BOOL waitingCallBack;
 
 
 /**
@@ -27,6 +31,12 @@
  *  @return 返回单例对象
  */
 + (YHOnePaySDK *)defaultService;
+
+/**
+ *  设置自定义收银台
+ *  @param cashierDeskVC 收银台ViewController
+ */
+-(void)setCashierDeskVC:(UIViewController<YHOnePayCashierDeskProtocol> *)cashierDeskVC;
 
 /**
  *  统一支付，将调起SDK内置收银台页面，让用户选择支付渠道
