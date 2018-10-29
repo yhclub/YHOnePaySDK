@@ -7,6 +7,7 @@
 //
 //  Version 2.0.8  by Jagtu  2018/8/12
 //  Version 2.1.9  by Jagtu  2018/9/5
+//  Version 1.2.4  by Jagtu  2018/10/29
 //
 // In this header, you should import all the public headers of your framework using statements like
 // #import <YHOnePaySDK/YHOnePaySDK.h>
