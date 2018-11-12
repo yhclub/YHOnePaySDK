@@ -7,7 +7,7 @@
 //
 //  Version 2.0.8  by Jagtu  2018/8/12
 //  Version 2.1.9  by Jagtu  2018/9/5
-//  Version 1.2.4  by Jagtu  2018/10/29
+//  Version 1.2.3.1  by Jagtu  2018/11/12
 //
 // In this header, you should import all the public headers of your framework using statements like
 // #import <YHOnePaySDK/YHOnePaySDK.h>
@@ -25,6 +25,11 @@
 //当前状态，YES为支付中，需要去查询支付结果；
 @property(nonatomic,assign)BOOL waitingCallBack;
 
+/**
+ * 代理回调
+ */
+@property(nonatomic,weak) id<YHOnePayCashierDeskProtocol> delegate;
+
 
 /**
  *  创建统一支付单例服务
@@ -32,12 +37,6 @@
  *  @return 返回单例对象
  */
 + (YHOnePaySDK *)defaultService;
-
-/**
- *  设置自定义收银台
- *  @param cashierDeskVC 收银台ViewController
- */
--(void)setCashierDeskVC:(UIViewController<YHOnePayCashierDeskProtocol> *)cashierDeskVC;
 
 /**
  *  统一支付，将调起SDK内置收银台页面，让用户选择支付渠道
@@ -61,6 +60,8 @@
 - (void)paymentWithParam:(id)orderParam
                 callback:(YHOPayCompletionBlock)completionBlock;
 
+- (void)paymentWithParam:(id)orderParam
+                delegate:(id<YHOnePayCashierDeskProtocol>)delegate;
 
 
 /**
