@@ -107,4 +107,6 @@
 - (void)processOrderWithPaymentResult:(NSURL *)resultUrl
                       standbyCallback:(YHOPayCompletionBlock)completionBlock;
 
+
+
 @end
