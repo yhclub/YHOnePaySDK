@@ -20,10 +20,10 @@
 
 /**
  *  刷新支付结果（当收银台重新显示时）
- *  请在viewWillAppear:中调用此方法，可通过[YHOnePaySDK defaultService].waitingCallBack判断是否需要请求
- *  @return 返回是否已处理。NO则将自动发起请求查询结果
+ *  当应用从后台进入活跃状态时，会调用此方法。
+ *  请在你的收银台页面viewWillAppear:中异步调用此方法(延迟0.5秒调用)
  */
--(BOOL)refreshPayResultWhenViewWillAppear;
+-(void)refreshPayResultWhenViewWillAppear;
 
 /**
  *  初始化统一支付订单单号
