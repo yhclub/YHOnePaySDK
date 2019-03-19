@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YHOnePaySDK"
-  s.version      = "1.3.0"
+  s.version      = "1.4.0"
   s.summary      = "统一支付SDK"
 
   s.description  = "统一支付SDK，封装了支付宝支付、微信支付、银联支付、支付宝Wap支付、微信Wap支付等多种支付方式。对接指南：http://120.42.37.94:9999/showdoc-master/web/#/page/1161 "
@@ -20,21 +20,11 @@ Pod::Spec.new do |s|
 
   s.libraries        = 'z', 'c++', 'sqlite3'
 
-  s.dependency     'YHBaseSDK'##, '1.1.2'
-
-  s.dependency     'YHCategorySDK'##, '1.0.1'
-
-  s.dependency     'YHUtiliitiesSDK'##, '1.0.1'
-
-  s.dependency     'YHAlertSDK'##, '1.0.0'
-
-  s.dependency     'YHWechatSDK'##, '1.8.2'
-
-  s.dependency     'YHAlipaySDK'##, '15.5.2'
-
-  s.dependency     'SAMKeychain', '~> 1.5'
-
-  s.dependency	   'YHUPPayPluginSDK', '~> 0.1.4'
+  s.dependency 'YHBaseSDK',         '~> 1.1'
+  s.dependency 'YHCategorySDK',     '~> 1.0'
+  s.dependency 'YHUtiliitiesSDK',   '~> 1.0'
+  s.dependency 'YHAlertSDK',        '~> 1.0'
+  s.dependency 'SAMKeychain',       '~> 1.5'
 
   s.requires_arc = true
 
@@ -42,5 +32,22 @@ Pod::Spec.new do |s|
 
   s.resources    = 'Resources/*.bundle'
 
+  s.default_subspecs = 'Alipay', 'Wxpay', 'Unionpay'
+
+  s.subspec 'Alipay' do |alipay|
+
+      alipay.dependency 'YHAlipaySDK',       '~> 15.5'
+  end
+  
+  s.subspec 'Wxpay' do |wxpay|
+
+      wxpay.dependency 'YHWechatSDK',       '~> 1.8'
+  end
+  
+  s.subspec 'Unionpay' do |up|
+
+      up.dependency 'YHUPPayPluginSDK',  '~> 0.1'
+  end
+  
 
 end

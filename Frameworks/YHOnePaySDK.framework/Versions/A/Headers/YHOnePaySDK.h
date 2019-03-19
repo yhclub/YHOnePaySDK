@@ -18,18 +18,30 @@
 //config
 #import <YHOnePaySDK/YHOnePayConfig.h>
 #import <YHOnePaySDK/YHOnePayTheme.h>
-#import <YHOnePaySDK/YHOnePayCashierDeskProtocol.h>
+#import <YHOnePaySDK/YHOnePayDelegate.h>
 
 
 @interface YHOnePaySDK : NSObject
 
-//当前状态，YES为支付中，需要去查询支付结果；
-@property(nonatomic,assign)BOOL waitingCallBack;
-
 /**
  * 代理回调
  */
-@property(nonatomic,weak) id<YHOnePayCashierDeskProtocol> delegate;
+@property(nonatomic,weak,nullable) id<YHOnePayDelegate> delegate;
+
+/**
+ * 统一支付订单号
+ */
+@property(nonatomic,strong,nullable)NSString *chargeNo;
+
+/**
+ * 统一支付结果回调Block
+ */
+@property(nonatomic,copy,nullable)YHOPayCompletionBlock completionBlock;
+
+/**
+ * 支付等待，YES为支付中，需要去查询支付结果；
+ */
+@property(nonatomic,assign)BOOL waitingCallBack;
 
 
 /**
@@ -62,7 +74,7 @@
                 callback:(YHOPayCompletionBlock)completionBlock;
 
 - (void)paymentWithParam:(id)orderParam
-                delegate:(id<YHOnePayCashierDeskProtocol>)delegate;
+                delegate:(id<YHOnePayDelegate>)delegate;
 
 
 /**
@@ -108,6 +120,15 @@
 - (void)processOrderWithPaymentResult:(NSURL *)resultUrl
                       standbyCallback:(YHOPayCompletionBlock)completionBlock;
 
+/**
+ * 刷新支付结果
+ */
+-(void)refreshPayResult;
 
+
+/**
+ * 设置支付结果(请勿随意调用)
+ */
+-(void)completionWithCode:(YHOnePayErrCode)errorCode message:(NSString *)message result:(NSDictionary *)resultDic;
 
 @end

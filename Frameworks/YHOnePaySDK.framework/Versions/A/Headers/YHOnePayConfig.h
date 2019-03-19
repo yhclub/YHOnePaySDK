@@ -17,19 +17,19 @@ FOUNDATION_EXPORT const unsigned char YHOnePaySDKVersionString[];
 /*! @brief 错误码
  *
  */
-typedef NS_ENUM(NSInteger,YLZErrCode) {
-    YLZErrCodeSuccess           = 0,    /**< 成功    订单支付成功*/
-    YLZErrCodeCommon     = -1,   /**< 普通错误类型    其它支付错误*/
-    YLZErrCodeUserCancel = -2,   /**< 用户点击取消并返回    用户中途取消*/
-    YLZErrCodeSentFail   = -3,   /**< 发送失败    网络连接出错*/
-    YLZErrCodeAuthDeny   = -4,   /**< 授权失败    */
-    YLZErrCodeUnsupport  = -5,   /**< 不支持    */
-    YLZErrCodeParamExpection     = -6,   /**< 参数异常错误    */
-    YLZErrCodeInProcess     = -7,   /**< 正在处理中，支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态    */
-    YLZErrCodePayFail   = -8,   /**< 订单支付失败    */
-    YLZErrCodeRepeat   = -9,   /**< 重复请求    */
-    YLZErrCodeUnKnown   = -10,   /**< 支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态    */
-    YLZErrCodeExpection   = -11,/**< 代码异常，响应数据异常等   */
+typedef NS_ENUM(NSInteger,YHOnePayErrCode) {
+    YHOnePayErrCodeSuccess           = 0,    /**< 成功    订单支付成功*/
+    YHOnePayErrCodeCommon     = -1,   /**< 普通错误类型    其它支付错误*/
+    YHOnePayErrCodeUserCancel = -2,   /**< 用户点击取消并返回    用户中途取消*/
+    YHOnePayErrCodeSentFail   = -3,   /**< 发送失败    网络连接出错*/
+    YHOnePayErrCodeAuthDeny   = -4,   /**< 授权失败    */
+    YHOnePayErrCodeUnsupport  = -5,   /**< 不支持    */
+    YHOnePayErrCodeParamExpection     = -6,   /**< 参数异常错误    */
+    YHOnePayErrCodeInProcess     = -7,   /**< 正在处理中，支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态    */
+    YHOnePayErrCodePayFail   = -8,   /**< 订单支付失败    */
+    YHOnePayErrCodeRepeat   = -9,   /**< 重复请求    */
+    YHOnePayErrCodeUnKnown   = -10,   /**< 支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态    */
+    YHOnePayErrCodeExpection   = -11,/**< 代码异常，响应数据异常等   */
 };
 
 /**
@@ -37,7 +37,7 @@ typedef NS_ENUM(NSInteger,YLZErrCode) {
  *  @param message   提示信息
  *  @param resultDic 其他返回结果
  */
-typedef void(^YHOPayCompletionBlock)(YLZErrCode errorCode,NSString * message,NSDictionary * resultDic);
+typedef void(^YHOPayCompletionBlock)(YHOnePayErrCode errorCode,NSString * message,NSDictionary * resultDic);
 
 
 

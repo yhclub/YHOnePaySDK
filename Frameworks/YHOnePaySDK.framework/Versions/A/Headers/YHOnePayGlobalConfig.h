@@ -16,10 +16,10 @@
 
 #define kUP_WAP_BACK_URL @"/frontCall"
 
-#define kChannelWxPay @"WX_APP"
-#define kChannelAliPay @"ALI_APP"
 #define kChannelHcPay @"JKT_APP"
+#define kChannelAliPay @"ALI_APP"
 #define kChannelAliWapPay @"ALI_WAP" //打开 data.result.directUrl
+#define kChannelWxPay @"WX_APP"
 #define kChannelWxWapPay @"WX_WAP" //打开 data.result.directUrl
 #define kChannelUpWap @"UP_WAP" // 提交表单 data.result.html
 #define kChannelUpApp @"UP_APP" //
