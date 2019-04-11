@@ -129,6 +129,6 @@
 /**
  * 设置支付结果(请勿随意调用)
  */
--(void)completionWithCode:(YHOnePayErrCode)errorCode message:(NSString *)message result:(NSDictionary *)resultDic;
+-(void)completionWithCode:(YLZErrCode)errorCode message:(NSString *)message result:(NSDictionary *)resultDic;
 
 @end

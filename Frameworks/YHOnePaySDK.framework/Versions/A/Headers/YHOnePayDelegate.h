@@ -13,7 +13,7 @@
 /**
  * 支付结果回调，请处理
  */
--(void)processPaymentResult:(YHOnePayErrCode)errorCode message:(NSString *)message result:(NSDictionary *)resultDic;
+-(void)processPaymentResult:(YLZErrCode)errorCode message:(NSString *)message result:(NSDictionary *)resultDic;
 
 @optional
 
