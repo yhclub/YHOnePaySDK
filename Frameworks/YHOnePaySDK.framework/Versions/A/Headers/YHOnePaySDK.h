@@ -18,18 +18,32 @@
 //config
 #import <YHOnePaySDK/YHOnePayConfig.h>
 #import <YHOnePaySDK/YHOnePayTheme.h>
-#import <YHOnePaySDK/YHOnePayCashierDeskProtocol.h>
+#import <YHOnePaySDK/YHOnePayDelegate.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface YHOnePaySDK : NSObject
-
-//当前状态，YES为支付中，需要去查询支付结果；
-@property(nonatomic,assign)BOOL waitingCallBack;
 
 /**
  * 代理回调
  */
-@property(nonatomic,weak) id<YHOnePayCashierDeskProtocol> delegate;
+@property(nonatomic,weak,nullable) id<YHOnePayDelegate> delegate;
+
+/**
+ * 统一支付订单号
+ */
+@property(nonatomic,strong,nullable)NSString *chargeNo;
+
+/**
+ * 统一支付结果回调Block
+ */
+@property(nonatomic,copy,nullable)YHOPayCompletionBlock completionBlock;
+
+/**
+ * 支付等待，YES为支付中，需要去查询支付结果；
+ */
+@property(nonatomic,assign)BOOL waitingCallBack;
 
 
 /**
@@ -48,7 +62,7 @@
  
  */
 -(void)paymentWithChargeNo:(NSString *)chargeNo
-                  callback:(YHOPayCompletionBlock)completionBlock;
+                  callback:(YHOPayCompletionBlock _Nullable)completionBlock;
 
 /**
  *  统一支付
@@ -62,7 +76,7 @@
                 callback:(YHOPayCompletionBlock)completionBlock;
 
 - (void)paymentWithParam:(id)orderParam
-                delegate:(id<YHOnePayCashierDeskProtocol>)delegate;
+                delegate:(id<YHOnePayDelegate>)delegate;
 
 
 /**
@@ -74,7 +88,7 @@
  */
 -(void)queryPayInfo:(NSString *)chargeNo
           channelId:(NSString *)channelId
-           callback:(YHOPayCompletionBlock)completionBlock;
+           callback:(YHOPayCompletionBlock _Nullable)completionBlock;
 
 /**
  *  查询订单详情
@@ -83,7 +97,7 @@
  *  @param completionBlock 回调Block
  */
 - (void)queryOrderInfo:(NSString *)chargeNo
-              callback:(YHOPayCompletionBlock)completionBlock;
+              callback:(YHOPayCompletionBlock _Nullable)completionBlock;
 
 
 /**
@@ -94,7 +108,7 @@
  
  */
 - (void)queryPayResult:(NSString *)chargeNo
-              callback:(YHOPayCompletionBlock)completionBlock;
+              callback:(YHOPayCompletionBlock _Nullable)completionBlock;
 
 
 /**
@@ -106,8 +120,24 @@
  *  注：如果商户app并未被系统kill掉，且之前调起支付接口时设置的callback有效，则不会调用completionBlock
  */
 - (void)processOrderWithPaymentResult:(NSURL *)resultUrl
-                      standbyCallback:(YHOPayCompletionBlock)completionBlock;
+                      standbyCallback:(YHOPayCompletionBlock _Nullable)completionBlock;
 
 
+- (BOOL)processOrderWithUserActivity:(NSUserActivity *)userActivity
+                     standbyCallback:(YHOPayCompletionBlock _Nullable)completionBlock;
+
+
+/**
+ * 刷新支付结果
+ */
+-(void)refreshPayResult;
+
+
+/**
+ * 设置支付结果(请勿随意调用)
+ */
+-(void)completionWithCode:(YLZErrCode)errorCode message:(NSString *)message result:(NSDictionary * _Nullable)resultDic;
 
 @end
+
+NS_ASSUME_NONNULL_END

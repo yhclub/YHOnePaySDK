@@ -58,6 +58,7 @@ typedef void(^YHOPayCompletionBlock)(YLZErrCode errorCode,NSString * message,NSD
 /** APP支付回调URL Schemes，请务必设置
  *  默认值为[[NSBundle mainBundle] bundleIdentifier]
  *  注：微信支付是将其分配给商户对应appId作为回调URL Schemes，商户APP也应该添加
+ *  注：推荐使用微信支付appId作为URL Schemes，特别是使用建行龙支付渠道只能设置为微信支付的appId
  */
 @property(nonatomic,copy)NSString * appScheme;
 
