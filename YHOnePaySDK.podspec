@@ -54,11 +54,11 @@ Pod::Spec.new do |s|
       up.dependency 'YHUPPayPluginSDK',  '~> 0.1'
   end
   
-  s.subspec 'CCB' do |ccb|
-      
-      ccb.source_files = 'Classes/CCB/**/*.{h,m}'
-      ccb.dependency 'YHCCBSDK',  '~> 1.0.1'
-  end
+#  s.subspec 'CCB' do |ccb|
+#      
+#      ccb.source_files = 'Classes/CCB/**/*.{h,m}'
+#      ccb.dependency 'YHCCBSDK',  '~> 1.0.1'
+#  end
 
 
 
