@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YHOnePaySDK"
-  s.version      = "1.5.1"
+  s.version      = "1.5.2"
   s.summary      = "统一支付SDK"
 
   s.description  = "统一支付SDK，封装了支付宝支付、微信支付、银联支付、支付宝Wap支付、微信Wap支付等多种支付方式。对接指南：http://120.42.37.94:9999/showdoc-master/web/#/page/1161 "
@@ -20,27 +20,54 @@ Pod::Spec.new do |s|
 
   s.libraries        = 'z', 'c++', 'sqlite3'
 
-  s.dependency     'YHBaseSDK'##, '1.1.2'
-
-  s.dependency     'YHCategorySDK'##, '1.0.1'
-
-  s.dependency     'YHUtiliitiesSDK'##, '1.0.1'
-
-  s.dependency     'YHAlertSDK'##, '1.0.0'
-
-  s.dependency     'YHWechatSDK'##, '1.8.2'
-
-  s.dependency     'YHAlipaySDK'##, '15.5.2'
-
-  s.dependency     'SAMKeychain', '~> 1.5'
-
-  s.dependency	   'YHUPPayPluginSDK', '~> 0.1.4'
-
   s.requires_arc = true
 
-  s.vendored_frameworks = ["Frameworks/*.framework"]
+  s.default_subspecs = 'Core'
 
-  s.resources    = 'Resources/*.bundle'
+  s.subspec 'Core' do |cs|
+
+      cs.vendored_frameworks = ["Frameworks/*.framework"]
+
+      cs.resources = 'Resources/*.bundle'
+      
+      cs.dependency     'YHBaseSDK'
+
+      cs.dependency     'YHCategorySDK'
+
+      cs.dependency     'YHUtiliitiesSDK'
+
+      cs.dependency     'YHAlertSDK'
+
+  end
+
+  s.subspec 'Alipay' do |alipay|
+
+      alipay.source_files = 'Classes/Alipay/**/*.{h,m}'
+      alipay.dependency 'YHOnePaySDK/Core', s.version.to_s
+      alipay.dependency 'YHAlipaySDK',       '~> 15.5'
+  end
+  
+  s.subspec 'Wxpay' do |wxpay|
+
+      wxpay.source_files = 'Classes/Wxpay/**/*.{h,m}'
+      wxpay.dependency 'YHOnePaySDK/Core', s.version.to_s
+      wxpay.dependency 'YHWechatSDK',       '~> 1.8.6'
+  end
+  
+  s.subspec 'Unionpay' do |up|
+
+      up.source_files = 'Classes/Unionpay/**/*.{h,m}'
+      up.dependency 'YHOnePaySDK/Core', s.version.to_s
+      up.dependency 'YHUPPayPluginSDK',  '~> 0.1'
+  end
+  
+  s.subspec 'CCB' do |ccb|
+      
+      ccb.source_files = 'Classes/CCB/**/*.{h,m}'
+      ccb.dependency 'YHOnePaySDK/Core', s.version.to_s
+      ccb.dependency 'YHCCBSDK',  '~> 1.0.1'
+  end
+
 
 
 end
