@@ -22,23 +22,19 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.default_subspecs = 'Core'
+  s.vendored_frameworks = ["Frameworks/*.framework"]
 
-  s.subspec 'Core' do |cs|
-
-      cs.vendored_frameworks = ["Frameworks/*.framework"]
-
-      cs.resources = 'Resources/*.bundle'
+  s.resources = 'Resources/*.bundle'
       
-      cs.dependency     'YHBaseSDK'
+  s.dependency     'YHBaseSDK'
 
-      cs.dependency     'YHCategorySDK'
+  s.dependency     'YHCategorySDK'
 
-      cs.dependency     'YHUtiliitiesSDK'
+  s.dependency     'YHUtiliitiesSDK'
 
-      cs.dependency     'YHAlertSDK'
+  s.dependency     'YHAlertSDK'
 
-  end
+#  s.default_subspecs = ''
 
   s.subspec 'Alipay' do |alipay|
 
