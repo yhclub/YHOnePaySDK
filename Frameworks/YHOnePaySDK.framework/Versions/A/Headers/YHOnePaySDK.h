@@ -15,10 +15,20 @@
 
 
 #import <UIKit/UIKit.h>
+//依赖组件
+#import <YHBaseSDK/YHBaseSDK.h>
+#import <YHCategorySDK/YHCategorySDK.h>
+#import <YHUtiliitiesSDK/YHUtiliitiesSDK.h>
+#import <YHAlertSDK/YHAlertSDK.h>
+
 //config
 #import <YHOnePaySDK/YHOnePayConfig.h>
 #import <YHOnePaySDK/YHOnePayTheme.h>
 #import <YHOnePaySDK/YHOnePayDelegate.h>
+#import <YHOnePaySDK/YHOnePayWebVC.h>
+#import <YHOnePaySDK/YHOnePayHelper.h>
+#import <YHOnePaySDK/YHOnePayGlobalConfig.h>
+
 
 
 NS_ASSUME_NONNULL_BEGIN

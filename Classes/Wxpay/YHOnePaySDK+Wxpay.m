@@ -6,7 +6,6 @@
 //
 
 #import "YHOnePaySDK+Wxpay.h"
-#import "YHOnePayWebVC.h"
 
 @implementation YHOnePaySDK (Wxpay)
 

@@ -6,7 +6,7 @@
 //
 
 #import "YHOnePaySDK+Alipay.h"
-#import "YHOnePayWebVC.h"
+
 
 @implementation YHOnePaySDK (Alipay)
 

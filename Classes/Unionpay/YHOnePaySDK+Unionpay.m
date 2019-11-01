@@ -6,7 +6,6 @@
 //
 
 #import "YHOnePaySDK+Unionpay.h"
-#import "YHOnePayWebVC.h"
 
 @implementation YHOnePaySDK (Unionpay)
 
