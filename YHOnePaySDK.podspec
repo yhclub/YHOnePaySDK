@@ -39,28 +39,24 @@ Pod::Spec.new do |s|
   s.subspec 'Alipay' do |alipay|
 
       alipay.source_files = 'Classes/Alipay/**/*.{h,m}'
-      alipay.dependency 'YHOnePaySDK/Core', s.version.to_s
       alipay.dependency 'YHAlipaySDK',       '~> 15.5'
   end
   
   s.subspec 'Wxpay' do |wxpay|
 
       wxpay.source_files = 'Classes/Wxpay/**/*.{h,m}'
-      wxpay.dependency 'YHOnePaySDK/Core', s.version.to_s
       wxpay.dependency 'YHWechatSDK',       '~> 1.8.6'
   end
   
   s.subspec 'Unionpay' do |up|
 
       up.source_files = 'Classes/Unionpay/**/*.{h,m}'
-      up.dependency 'YHOnePaySDK/Core', s.version.to_s
       up.dependency 'YHUPPayPluginSDK',  '~> 0.1'
   end
   
   s.subspec 'CCB' do |ccb|
       
       ccb.source_files = 'Classes/CCB/**/*.{h,m}'
-      ccb.dependency 'YHOnePaySDK/Core', s.version.to_s
       ccb.dependency 'YHCCBSDK',  '~> 1.0.1'
   end
 
