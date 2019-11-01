@@ -22,35 +22,43 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.vendored_frameworks = ["Frameworks/*.framework"]
+  s.default_subspecs = 'Core'
 
-  s.resources = 'Resources/*.bundle'
+  s.subspec 'Core' do |sp|
+
+      sp.vendored_frameworks = ["Frameworks/*.framework"]
+
+      sp.resources = 'Resources/*.bundle'
       
-  s.dependency     'YHBaseSDK'
+      sp.dependency     'YHBaseSDK'
 
-  s.dependency     'YHCategorySDK'
+      sp.dependency     'YHCategorySDK'
 
-  s.dependency     'YHUtiliitiesSDK'
+      sp.dependency     'YHUtiliitiesSDK'
 
-  s.dependency     'YHAlertSDK'
+      sp.dependency     'YHAlertSDK'
 
-#  s.default_subspecs = ''
+  end
+  
 
   s.subspec 'Alipay' do |alipay|
 
       alipay.source_files = 'Classes/Alipay/**/*.{h,m}'
+      alipay.dependency 'YHOnePaySDK/Core'#, s.version.to_s
       alipay.dependency 'YHAlipaySDK',       '~> 15.5'
   end
   
   s.subspec 'Wxpay' do |wxpay|
 
       wxpay.source_files = 'Classes/Wxpay/**/*.{h,m}'
+      wxpay.dependency 'YHOnePaySDK/Core'#, s.version.to_s
       wxpay.dependency 'YHWechatSDK',       '~> 1.8.6'
   end
   
   s.subspec 'Unionpay' do |up|
 
       up.source_files = 'Classes/Unionpay/**/*.{h,m}'
+      up.dependency 'YHOnePaySDK/Core'#, s.version.to_s
       up.dependency 'YHUPPayPluginSDK',  '~> 0.1'
   end
   
