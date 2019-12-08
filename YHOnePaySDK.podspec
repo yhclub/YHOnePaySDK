@@ -31,30 +31,45 @@ Pod::Spec.new do |s|
   s.dependency     'YHUtiliitiesSDK'
   s.dependency     'YHAlertSDK'
    
-  s.subspec 'Default' do |defsub|
+  s.subspec 'Default' do |dt|
 
-      defsub.vendored_frameworks = ["Frameworks/AliWxUnion/*.framework"]
-
+      dt.summary = "包含：支付宝、微信、银联支付"
+      dt.vendored_frameworks = ["Frameworks/AliWxUnion/*.framework"]
+      dt.dependency 'YHAlipaySDK'
+      dt.dependency 'YHWechatSDK'
+      dt.dependency 'YHUPPayPluginSDK'
+      
   end
   
 
   s.subspec 'AliWxUnion' do |awu|
 
+      awu.summary = "包含：支付宝、微信、银联支付"
       awu.vendored_frameworks = ["Frameworks/AliWxUnion/*.framework"]
+      awu.dependency 'YHAlipaySDK'
+      awu.dependency 'YHWechatSDK'
+      awu.dependency 'YHUPPayPluginSDK'
 
   end
   
 
   s.subspec 'AliWx' do |aliwx|
 
+      aliwx.summary = "包含：支付宝、微信"
       aliwx.vendored_frameworks = ["Frameworks/AliWx/*.framework"]
+      aliwx.dependency 'YHAlipaySDK'
+      aliwx.dependency 'YHWechatSDK'
 
   end
   
-#  s.subspec 'All' do |all|
-#      
-#      all.vendored_frameworks = ["Frameworks/All/*.framework"]
-#  end
+  s.subspec 'All' do |all|
+      
+      all.summary = "包含：支付宝、微信、银联支付"
+      all.vendored_frameworks = ["Frameworks/All/*.framework"]
+      all.dependency 'YHAlipaySDK'
+      all.dependency 'YHWechatSDK'
+      all.dependency 'YHUPPayPluginSDK'
+  end
 
 
 
