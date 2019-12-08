@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
    
   s.subspec 'Default' do |dt|
 
-      dt.summary = "包含：支付宝、微信、银联支付"
+      #包含：支付宝、微信、银联支付
       dt.vendored_frameworks = ["Frameworks/AliWxUnion/*.framework"]
       dt.dependency 'YHAlipaySDK'
       dt.dependency 'YHWechatSDK'
@@ -44,7 +44,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'AliWxUnion' do |awu|
 
-      awu.summary = "包含：支付宝、微信、银联支付"
+      #包含：支付宝、微信、银联支付
       awu.vendored_frameworks = ["Frameworks/AliWxUnion/*.framework"]
       awu.dependency 'YHAlipaySDK'
       awu.dependency 'YHWechatSDK'
@@ -55,7 +55,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'AliWx' do |aliwx|
 
-      aliwx.summary = "包含：支付宝、微信"
+      #包含：支付宝、微信
       aliwx.vendored_frameworks = ["Frameworks/AliWx/*.framework"]
       aliwx.dependency 'YHAlipaySDK'
       aliwx.dependency 'YHWechatSDK'
@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'All' do |all|
       
-      all.summary = "包含：支付宝、微信、银联支付"
+      #包含：支付宝、微信、银联支付
       all.vendored_frameworks = ["Frameworks/All/*.framework"]
       all.dependency 'YHAlipaySDK'
       all.dependency 'YHWechatSDK'
