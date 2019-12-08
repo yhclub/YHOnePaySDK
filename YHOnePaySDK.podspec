@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YHOnePaySDK"
-  s.version      = "1.5.2"
+  s.version      = "1.5.3"
   s.summary      = "统一支付SDK"
 
   s.description  = "统一支付SDK，封装了支付宝支付、微信支付、银联支付、支付宝Wap支付、微信Wap支付等多种支付方式。对接指南：http://120.42.37.94:9999/showdoc-master/web/#/page/1161 "
@@ -22,50 +22,38 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.default_subspecs = 'Core'
+  s.default_subspecs = 'Default'
 
-  s.subspec 'Core' do |sp|
-
-      sp.vendored_frameworks = ["Frameworks/*.framework"]
-
-      sp.resources = 'Resources/*.bundle'
+  s.resources = 'Resources/*.bundle'
       
-      sp.dependency     'YHBaseSDK'
+  s.dependency     'YHBaseSDK'
+  s.dependency     'YHCategorySDK'
+  s.dependency     'YHUtiliitiesSDK'
+  s.dependency     'YHAlertSDK'
+   
+  s.subspec 'Default' do |defsub|
 
-      sp.dependency     'YHCategorySDK'
-
-      sp.dependency     'YHUtiliitiesSDK'
-
-      sp.dependency     'YHAlertSDK'
+      defsub.vendored_frameworks = ["Frameworks/AliWxUnion/*.framework"]
 
   end
   
 
-  s.subspec 'Alipay' do |alipay|
+  s.subspec 'AliWxUnion' do |awu|
 
-      alipay.source_files = 'Classes/Alipay/**/*.{h,m}'
-      alipay.dependency 'YHOnePaySDK/Core'#, s.version.to_s
-      alipay.dependency 'YHAlipaySDK',       '~> 15.5'
+      awu.vendored_frameworks = ["Frameworks/AliWxUnion/*.framework"]
+
   end
   
-  s.subspec 'Wxpay' do |wxpay|
 
-      wxpay.source_files = 'Classes/Wxpay/**/*.{h,m}'
-      wxpay.dependency 'YHOnePaySDK/Core'#, s.version.to_s
-      wxpay.dependency 'YHWechatSDK',       '~> 1.8.6'
+  s.subspec 'AliWx' do |aliwx|
+
+      aliwx.vendored_frameworks = ["Frameworks/AliWx/*.framework"]
+
   end
   
-  s.subspec 'Unionpay' do |up|
-
-      up.source_files = 'Classes/Unionpay/**/*.{h,m}'
-      up.dependency 'YHOnePaySDK/Core'#, s.version.to_s
-      up.dependency 'YHUPPayPluginSDK',  '~> 0.1'
-  end
-  
-#  s.subspec 'CCB' do |ccb|
+#  s.subspec 'All' do |all|
 #      
-#      ccb.source_files = 'Classes/CCB/**/*.{h,m}'
-#      ccb.dependency 'YHCCBSDK',  '~> 1.0.1'
+#      all.vendored_frameworks = ["Frameworks/All/*.framework"]
 #  end
 
 
