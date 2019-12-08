@@ -62,14 +62,13 @@ Pod::Spec.new do |s|
 
   end
   
-  s.subspec 'All' do |all|
-      
-      #包含：支付宝、微信、银联支付
-      all.vendored_frameworks = ["Frameworks/All/*.framework"]
-      all.dependency 'YHAlipaySDK'
-      all.dependency 'YHWechatSDK'
-      all.dependency 'YHUPPayPluginSDK'
-  end
+#  s.subspec 'All' do |all|      
+#      #包含：支付宝、微信、银联支付
+#      all.vendored_frameworks = ["Frameworks/All/*.framework"]
+#      all.dependency 'YHAlipaySDK'
+#      all.dependency 'YHWechatSDK'
+#      all.dependency 'YHUPPayPluginSDK'
+#  end
 
 
 
