@@ -5,7 +5,8 @@
 //  Created by Jagtu on 2019/3/14.
 //
 
-#import "YHOnePaySDK.h"
+
+#import <YHOnePaySDK/YHOnePaySDK.h>
 #import <AlipaySDK/AlipaySDK.h>
 
 NS_ASSUME_NONNULL_BEGIN

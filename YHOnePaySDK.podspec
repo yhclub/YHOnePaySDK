@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YHOnePaySDK"
-  s.version      = "1.5.4"
+  s.version      = "1.5.5.0"
   s.summary      = "统一支付SDK"
 
   s.description  = "统一支付SDK，封装了支付宝支付、微信支付、银联支付、支付宝Wap支付、微信Wap支付等多种支付方式。对接指南：http://120.42.37.94:9999/showdoc-master/web/#/page/1161 "
@@ -57,8 +57,8 @@ Pod::Spec.new do |s|
 
       #包含：支付宝、微信
       sp.vendored_frameworks = ["Frameworks/AliWx/*.framework"]
-      sp.dependency 'YHAlipaySDK'
-      sp.dependency 'YHWechatSDK'
+      sp.dependency 'AlipaySDK-iOS'
+      sp.dependency 'WechatOpenSDK'
 
   end
   
