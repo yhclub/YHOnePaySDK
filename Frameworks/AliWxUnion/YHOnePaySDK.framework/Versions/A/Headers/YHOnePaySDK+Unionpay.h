@@ -5,7 +5,7 @@
 //  Created by Jagtu on 2019/3/14.
 //
 
-#import "YHOnePaySDK.h"
+#import <YHOnePaySDK/YHOnePaySDK.h>
 #import <YHUPPayPluginSDK/UPAPayPlugin.h>
 #import <YHUPPayPluginSDK/UPPaymentControl.h>
 
