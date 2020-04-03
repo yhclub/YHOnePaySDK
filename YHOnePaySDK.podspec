@@ -46,8 +46,8 @@ Pod::Spec.new do |s|
 
       #包含：支付宝、微信、银联支付
       sp.vendored_frameworks = ["Frameworks/AliWxUnion/*.framework"]
-      sp.dependency 'YHAlipaySDK'
-      sp.dependency 'YHWechatSDK'
+      sp.dependency 'AlipaySDK-iOS'
+      sp.dependency 'WechatOpenSDK'
       sp.dependency 'YHUPPayPluginSDK'
 
   end
@@ -67,7 +67,7 @@ Pod::Spec.new do |s|
 
       #包含：支付宝
       sp.vendored_frameworks = ["Frameworks/Alipay/*.framework"]
-      sp.dependency 'YHAlipaySDK'
+      sp.dependency 'AlipaySDK-iOS'
 
   end
   
@@ -76,7 +76,7 @@ Pod::Spec.new do |s|
 
       #包含：微信
       sp.vendored_frameworks = ["Frameworks/Wxpay/*.framework"]
-      sp.dependency 'YHWechatSDK'
+      sp.dependency 'WechatOpenSDK'
 
   end
   
