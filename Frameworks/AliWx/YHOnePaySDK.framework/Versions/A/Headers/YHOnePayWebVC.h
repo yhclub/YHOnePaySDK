@@ -10,7 +10,7 @@
 
 @class YHOnePayWebView;
 
-@interface YHOnePayWebVC : YHBaseVC<UIWebViewDelegate>
+@interface YHOnePayWebVC : YHBaseVC
 
 @property (nonatomic, strong)YHOnePayWebView *webView;
 
