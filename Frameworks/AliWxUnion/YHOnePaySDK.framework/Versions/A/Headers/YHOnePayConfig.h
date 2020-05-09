@@ -18,18 +18,18 @@ FOUNDATION_EXPORT const unsigned char YHOnePaySDKVersionString[];
  *
  */
 typedef NS_ENUM(NSInteger,YLZErrCode) {
-    YLZErrCodeSuccess           = 0,    /**< 成功    订单支付成功*/
-    YLZErrCodeCommon     = -1,   /**< 普通错误类型    其它支付错误*/
-    YLZErrCodeUserCancel = -2,   /**< 用户点击取消并返回    用户中途取消*/
-    YLZErrCodeSentFail   = -3,   /**< 发送失败    网络连接出错*/
-    YLZErrCodeAuthDeny   = -4,   /**< 授权失败    */
-    YLZErrCodeUnsupport  = -5,   /**< 不支持    */
-    YLZErrCodeParamExpection     = -6,   /**< 参数异常错误    */
-    YLZErrCodeInProcess     = -7,   /**< 正在处理中，支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态    */
-    YLZErrCodePayFail   = -8,   /**< 订单支付失败    */
-    YLZErrCodeRepeat   = -9,   /**< 重复请求    */
-    YLZErrCodeUnKnown   = -10,   /**< 支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态    */
-    YLZErrCodeExpection   = -11,/**< 代码异常，响应数据异常等   */
+    YLZErrCodeSuccess = 9000,    /**< 成功    订单支付成功*/
+    YLZErrCodeInProcess = 8000,   /**< 正在处理中，支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态    */
+    YLZErrCodePayFail = 4000,   /**< 订单支付失败    */
+    YLZErrCodeUserCancel = 6001,   /**< 用户点击取消并返回    用户中途取消*/
+    YLZErrCodeSentFail = 6002,   /**< 发送失败    网络连接出错*/
+    YLZErrCodeAuthDeny = 6003,   /**< 授权失败/不支持    */
+    YLZErrCodeUnKnown = 6004,   /**< 支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态    */
+    YLZErrCodeParamExpection = 6005,   /**< 参数异常错误    */
+    YLZErrCodeCommon = 6006,   /**< 普通错误类型    其它支付错误*/
+    YLZErrCodeOrderExpection = 6007,   /**< 找不到订单*/
+    YLZErrCodeRepeat = 6010,   /**< 重复请求    */
+    YLZErrCodeExpection = 8888,/**< 代码异常，响应数据异常等   */
 };
 
 /**
