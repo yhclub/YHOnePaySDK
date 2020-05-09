@@ -15,11 +15,24 @@
 
 
 #import <UIKit/UIKit.h>
+
+//依赖组件
+#import <YHBaseSDK/YHBaseSDK.h>
+#import <YHCategorySDK/YHCategorySDK.h>
+#import <YHUtiliitiesSDK/YHUtiliitiesSDK.h>
+#import <YHAlertSDK/YHAlertSDK.h>
+
 //config
 #import <YHOnePaySDK/YHOnePayConfig.h>
 #import <YHOnePaySDK/YHOnePayTheme.h>
 #import <YHOnePaySDK/YHOnePayDelegate.h>
+#import <YHOnePaySDK/YHOnePayWebVC.h>
+#import <YHOnePaySDK/YHOnePayHelper.h>
+#import <YHOnePaySDK/YHOnePayVCHelper.h>
+#import <YHOnePaySDK/YHOnePayGlobalConfig.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface YHOnePaySDK : NSObject
 
@@ -60,7 +73,7 @@
  
  */
 -(void)paymentWithChargeNo:(NSString *)chargeNo
-                  callback:(YHOPayCompletionBlock)completionBlock;
+                  callback:(YHOPayCompletionBlock _Nullable)completionBlock;
 
 /**
  *  统一支付
@@ -86,7 +99,7 @@
  */
 -(void)queryPayInfo:(NSString *)chargeNo
           channelId:(NSString *)channelId
-           callback:(YHOPayCompletionBlock)completionBlock;
+           callback:(YHOPayCompletionBlock _Nullable)completionBlock;
 
 /**
  *  查询订单详情
@@ -95,7 +108,7 @@
  *  @param completionBlock 回调Block
  */
 - (void)queryOrderInfo:(NSString *)chargeNo
-              callback:(YHOPayCompletionBlock)completionBlock;
+              callback:(YHOPayCompletionBlock _Nullable)completionBlock;
 
 
 /**
@@ -106,7 +119,7 @@
  
  */
 - (void)queryPayResult:(NSString *)chargeNo
-              callback:(YHOPayCompletionBlock)completionBlock;
+              callback:(YHOPayCompletionBlock _Nullable)completionBlock;
 
 
 /**
@@ -118,7 +131,12 @@
  *  注：如果商户app并未被系统kill掉，且之前调起支付接口时设置的callback有效，则不会调用completionBlock
  */
 - (void)processOrderWithPaymentResult:(NSURL *)resultUrl
-                      standbyCallback:(YHOPayCompletionBlock)completionBlock;
+                      standbyCallback:(YHOPayCompletionBlock _Nullable)completionBlock;
+
+
+- (BOOL)processOrderWithUserActivity:(NSUserActivity *)userActivity
+                     standbyCallback:(YHOPayCompletionBlock _Nullable)completionBlock;
+
 
 /**
  * 刷新支付结果
@@ -129,6 +147,8 @@
 /**
  * 设置支付结果(请勿随意调用)
  */
--(void)completionWithCode:(YLZErrCode)errorCode message:(NSString *)message result:(NSDictionary *)resultDic;
+-(void)completionWithCode:(YLZErrCode)errorCode message:(NSString *)message result:(NSDictionary * _Nullable)resultDic;
 
 @end
+
+NS_ASSUME_NONNULL_END
