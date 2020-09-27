@@ -30,4 +30,10 @@
 +(NSString *)getAppUserAgent;
 
 
+/**
+ * 打开外部链接
+ */
++(void)openURL:(NSURL *)url completionHandler:(void (^ __nullable)(BOOL success))completion;
+
+
 @end
