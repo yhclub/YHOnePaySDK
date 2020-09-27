@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)alipayWithUrl:(NSString *)directUrl;
 
+- (void)aliMinipayWithParam:(NSDictionary *)orderParam;
+
 - (void)alipayProcessWithResult:(NSURL *)resultUrl;
 
 - (BOOL)alipayInterceptorWithUrl:(NSString *)directUrl;
