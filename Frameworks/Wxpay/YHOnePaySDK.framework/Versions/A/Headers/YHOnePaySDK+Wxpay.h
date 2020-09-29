@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)wxpayWithParam:(NSDictionary *)param;
 
+- (void)wxMinipayWithParam:(NSDictionary *)param;
+
 - (void)wxpayWithUrl:(NSString *)directUrl;
 
 - (void)wxpayProcessWithResult:(NSURL *)resultUrl;
