@@ -3,13 +3,10 @@
 //  YHOnePaySDK
 //
 //  Created by Jagtu on 2018/4/27.
-//  Copyright © 2018年 yh. All rights reserved.
+//  Version 1.5.10
+//  Last Update 2020/11/29.
 //
-//  Version 2.0.8  by Jagtu  2018/8/12
-//  Version 2.1.9  by Jagtu  2018/9/5
-//  Version 1.2.3.1  by Jagtu  2018/11/12
-//  Version 1.2.9.3  by Jagtu  2018/11/20
-//  Version 1.5.9  by Jagtu  2020/9/27
+//  Copyright © 2020年 yh. All rights reserved.
 //
 // In this header, you should import all the public headers of your framework using statements like
 // #import <YHOnePaySDK/YHOnePaySDK.h>

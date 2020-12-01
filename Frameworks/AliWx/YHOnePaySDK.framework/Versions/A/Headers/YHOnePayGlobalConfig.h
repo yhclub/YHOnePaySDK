@@ -23,9 +23,14 @@
 #define kChannelWxPay @"WX_APP"
 #define kChannelWxWapPay @"WX_WAP" //打开 data.result.directUrl
 #define kChannelWxMiniPay @"WX_MIN"
-#define kChannelUpWap @"UP_WAP" // 提交表单 data.result.html
-#define kChannelUpApp @"UP_APP" //
+#define kChannelUpWapPay @"UP_WAP" // 提交表单 data.result.html
+#define kChannelUpAppPay @"UP_APP" //
+#define kChannelUpWxMinPay @"UP_WX_MIN"
+#define kChannelUpAliMinPay @"UP_ALI_MIN"
 #define kChannelCCBApp @"CCB_APP" //
+#define kChannelICBCWallet @"ICBC_WALLET" //工行钱包
+#define kChannelICBCApp @"ICBC_APP" //
+
 
 #define kDefaultChannelType @"app"
 

@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YHOnePaySDK"
-  s.version      = "1.5.9"
+  s.version      = "1.5.10"
   s.summary      = "统一支付SDK"
 
   s.description  = "统一支付SDK，封装了支付宝支付、微信支付、银联支付、支付宝Wap支付、微信Wap支付等多种支付方式。对接指南：http://120.42.37.94:9999/showdoc-master/web/#/page/1161 "
@@ -33,11 +33,10 @@ Pod::Spec.new do |s|
    
   s.subspec 'Default' do |sp|
 
-      #包含：支付宝、微信、银联支付
-      sp.vendored_frameworks = ["Frameworks/AliWxUnion/*.framework"]
+      #包含：支付宝、微信
+      sp.vendored_frameworks = ["Frameworks/AliWx/*.framework"]
       sp.dependency 'AlipaySDK-iOS'
       sp.dependency 'WechatOpenSDK'
-      sp.dependency 'YHUPPayPluginSDK'
       
   end
   
@@ -53,12 +52,13 @@ Pod::Spec.new do |s|
   end
   
 
-  s.subspec 'AliWx' do |sp|
+  s.subspec 'AliWxUMS' do |sp|
 
-      #包含：支付宝、微信
-      sp.vendored_frameworks = ["Frameworks/AliWx/*.framework"]
+      #包含：支付宝、微信、银联支付新版
+      sp.vendored_frameworks = ["Frameworks/AliWxUMS/*.framework"]
       sp.dependency 'AlipaySDK-iOS'
       sp.dependency 'WechatOpenSDK'
+      sp.dependency 'YHUMSPosPayOnly'
 
   end
   
@@ -87,6 +87,9 @@ Pod::Spec.new do |s|
 #      sp.dependency 'YHAlipaySDK'
 #      sp.dependency 'YHWechatSDK'
 #      sp.dependency 'YHUPPayPluginSDK'
+#      sp.dependency 'YHUMSPosPayOnly'
+#      sp.dependency 'YHCCBSDK'
+#      sp.dependency 'YHICBCPaySDK'
 #  end
 
 

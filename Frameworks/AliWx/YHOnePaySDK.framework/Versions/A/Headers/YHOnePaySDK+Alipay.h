@@ -17,9 +17,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)alipayWithUrl:(NSString *)directUrl;
 
-- (void)aliMinipayWithParam:(NSDictionary *)orderParam;
+/**
+ * 【支付宝小程序】
+ * @param param 包含miniuser、minipath、query、appScheme
+ */
+- (void)aliMinipayWithParam:(NSDictionary *)param;
 
-- (void)alipayProcessWithResult:(NSURL *)resultUrl;
+/**
+ * 【支付宝小程序-全民付全民移动支付】
+ */
+- (void)aliMinipayWithUpParam:(NSDictionary *)param;
+
+- (BOOL)alipayProcessWithResult:(NSURL *)resultUrl;
 
 - (BOOL)alipayInterceptorWithUrl:(NSString *)directUrl;
 

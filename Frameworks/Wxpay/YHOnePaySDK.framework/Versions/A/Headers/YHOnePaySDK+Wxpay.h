@@ -15,11 +15,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)wxpayWithParam:(NSDictionary *)param;
 
+/** 【微信小程序】
+ * @param param 包含appid、miniuser、minipath
+ */
 - (void)wxMinipayWithParam:(NSDictionary *)param;
+
+/**
+ * 【微信小程序-全民付全民移动支付】
+ */
+- (void)wxMinipayWithUpParam:(NSDictionary *)param;
 
 - (void)wxpayWithUrl:(NSString *)directUrl;
 
-- (void)wxpayProcessWithResult:(NSURL *)resultUrl;
+- (BOOL)wxpayProcessWithResult:(NSURL *)resultUrl;
 
 - (BOOL)wxpayProcessWithUniversalLink:(NSUserActivity *)userActivity;
 
