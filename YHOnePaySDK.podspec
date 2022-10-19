@@ -5,14 +5,14 @@ Pod::Spec.new do |s|
   s.version      = "1.5.18"
   s.summary      = "统一支付SDK"
 
-  s.description  = "统一支付SDK，封装了支付宝支付、微信支付、银联支付、支付宝Wap支付、微信Wap支付等多种支付方式。对接指南：https://showdoc.ylzpay.com/web/#/page/1161 "
+  s.description  = "统一支付SDK，封装了支付宝支付、微信支付、银联支付、支付宝Wap支付、微信Wap支付等多种支付方式。对接指南：https://showdoc.ylzpay.com/web/#/p/79e09dcb462e13a9a6af5cb232d5f449 "
 
   s.homepage     = "https://github.com/XmYlzYhkj/YHOnePaySDK"
 
   s.license      = "MIT"
 
   s.author       = { "XmYhkj" => "yhkj_xm@163.com" }
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios, "9.0"
 
   s.source       = { :git => "https://github.com/XmYlzYhkj/YHOnePaySDK.git", :tag => s.version.to_s }
 
