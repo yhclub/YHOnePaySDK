@@ -83,4 +83,7 @@ typedef void(^YHOPayCompletionBlock)(YLZErrCode errorCode,NSString * message,NSD
 
 @property(nonatomic,copy)NSString * ipAddress;
 
+/** 工行e支付，请配置urlListmain */
+@property (nonatomic, strong) NSString *icbcUrlListMain;//支付平台地址
+
 @end

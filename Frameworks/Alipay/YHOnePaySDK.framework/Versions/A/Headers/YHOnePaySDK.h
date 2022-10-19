@@ -2,11 +2,16 @@
 //  YHOnePaySDK.h
 //  YHOnePaySDK
 //
-//  Created by Jagtu on 2018/4/27.
-//  Version 1.5.10
-//  Last Update 2020/11/29.
+//  V1.0.0    Update  2018/4/27.
+//  V2.0.8    Update  2018/8/12
+//  V2.1.9    Update  2018/9/5
+//  V1.2.3.1  Update  2018/11/12
+//  V1.2.9.3  Update  2018/11/20
+//  V1.5.9    Update  2020/9/27
+//  V1.5.10   Update  2020/12/4
+//  V1.5.10   Update  2020/12/4
 //
-//  Copyright © 2020年 yh. All rights reserved.
+//  Copyright © 2018年～2021年 yh. All rights reserved.
 //
 // In this header, you should import all the public headers of your framework using statements like
 // #import <YHOnePaySDK/YHOnePaySDK.h>
@@ -24,11 +29,7 @@
 #import <YHOnePaySDK/YHOnePayConfig.h>
 #import <YHOnePaySDK/YHOnePayTheme.h>
 #import <YHOnePaySDK/YHOnePayDelegate.h>
-#import <YHOnePaySDK/YHOnePayWebVC.h>
-#import <YHOnePaySDK/YHOnePayHelper.h>
-#import <YHOnePaySDK/YHOnePayVCHelper.h>
 #import <YHOnePaySDK/YHOnePayGlobalConfig.h>
-
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -146,6 +147,12 @@ NS_ASSUME_NONNULL_BEGIN
  * 设置支付结果(请勿随意调用)
  */
 -(void)completionWithCode:(YLZErrCode)errorCode message:(NSString *)message result:(NSDictionary * _Nullable)resultDic;
+
+#ifdef DEBUG
+
+-(void)testAction;
+
+#endif
 
 @end
 

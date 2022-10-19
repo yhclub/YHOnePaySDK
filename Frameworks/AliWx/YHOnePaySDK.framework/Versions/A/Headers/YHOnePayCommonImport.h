@@ -25,6 +25,6 @@
 #import "YHOnePayConfig.h"
 #import "YHOnePayTheme.h"
 #import "YHOnePayGlobalConfig.h"
-
+#import "YHOnePayWebVC.h"
 
 #endif /* YHOnePayCommonImport_h */

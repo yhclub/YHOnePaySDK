@@ -9,6 +9,7 @@
 #ifndef YHOnePayConfig_h
 #define YHOnePayConfig_h
 
+#define kAppApi @"/appweb/merchapi"
 #define kGetCashierInfo @"/cashier/info"
 #define kPayConfirm @"/cashier/payConfirm"
 #define kQueryOrderResult @"/cashier/query"
@@ -20,6 +21,7 @@
 #define kChannelAliPay @"ALI_APP"
 #define kChannelAliWapPay @"ALI_WAP" //打开 data.result.directUrl
 #define kChannelAliMiniPay @"ALI_MIN"
+#define kChannelAliQRPay @"ALI_QR"
 #define kChannelWxPay @"WX_APP"
 #define kChannelWxWapPay @"WX_WAP" //打开 data.result.directUrl
 #define kChannelWxMiniPay @"WX_MIN"

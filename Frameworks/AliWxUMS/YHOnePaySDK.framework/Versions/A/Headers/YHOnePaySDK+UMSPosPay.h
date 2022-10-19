@@ -44,6 +44,14 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)UMSPosPayProcessWithResult:(NSURL *)url;
 
+/*! @brief 处理微信通过Universal Link启动App时传递的数据
+*
+* 需要在 application:continueUserActivity:restorationHandler:中调用。
+* @param userActivity 微信启动第三方应用时系统API传递过来的userActivity
+* @return 成功返回YES，失败返回NO。
+ */
+- (BOOL)UMSPosPayProcessWithUniversalLink:(NSUserActivity *)userActivity;
+
 @end
 
 NS_ASSUME_NONNULL_END

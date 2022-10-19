@@ -1,7 +1,27 @@
-# YHOnePaySDK
-统一支付
+## YHOnePaySDK
+### 统一支付
+##### 子库
+* Alipay:【Alipay】
+* Wxpay:【Wxpay】
+* AliWx:【Wxpay、AliWx】
+* AliWxUnion：【Wxpay、AliWx、Unionpay】
+* AliWxUMS：【Wxpay、AliWx、UMSPosPay】
+* All:【Wxpay,Alipay,UMSPosPay,Unionpay】
+
 
 版本记录
+### SDK1.5.18
+1. 更新支付宝网页支付、微信网页支付、支付宝二维码支付ALI_QR
+2. 更改获取IP地址接口
+3. 更改最低支持系统iOS9.0
+4. 新增支付方式UMSPosPay，包括【微信小程序-全民付移动支付】kChannelUpWxMinPay、【支付宝银联小程序支付】kChannelUpAliMinPay
+5. 去掉依赖GTMBase64
+6. 支持【微信小程序支付】
+- *7. 引入加解密【YHEnDecriptionSDK/EncryptAES】（已还原）
+- *8. 支持工行e支付【ICBCPay】、建行龙支付【CCB】
+- *9. 新增CCBGovPay(sxrsj)
+
+
 ### SDK1.5.10
 1. 完善微信小程序（银商渠道）、支付宝小程序（银商渠道）
 
